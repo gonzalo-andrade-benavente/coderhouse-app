@@ -2,27 +2,37 @@ import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 
+import '../../App.css';
+
+import { Navbar } from "../ui/Navbar";
+
 import { ProductApp } from "../product/ProductApp";
+import { Product } from "../product/Product";
 
 import { UserApp } from "../user/UserApp";
 
 export const AppRouter = () => {
-    
-    return(
+
+    return (
         <div>
-            
-            <h1>Welcome to React Router!</h1>
 
-            <Routes>
+            <Navbar />
 
-                <Route path="/" element={ <ProductApp /> }/>
+            <div className="App">
 
-                <Route path="/products" element={ <ProductApp /> }/>
+                <Routes>
 
-                <Route path="/users" element={ <UserApp />} />
+                    <Route path="/" element={<ProductApp />} />
 
+                    <Route path="/product" element={<Product />} />
 
-            </Routes>
+                    <Route path="/products" element={<ProductApp />} />
+
+                    <Route path="/users" element={<UserApp />} />
+
+                </Routes>
+
+            </div>
 
         </div>
     )
