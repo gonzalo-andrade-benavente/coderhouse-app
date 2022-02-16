@@ -19,8 +19,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link"
                         exact
-                        to="/products"
-                    >
+                        to="/products">
                         Products
                     </NavLink>
 
@@ -28,8 +27,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link"
                         exact
-                        to="/users"
-                    >
+                        to="/users">
                         Users
                     </NavLink>
 
@@ -37,8 +35,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link"
                         exact
-                        to="/cart"
-                    >
+                        to="/cart">
                         Cart
                     </NavLink>
 

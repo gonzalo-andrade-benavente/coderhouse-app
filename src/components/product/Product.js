@@ -1,9 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export const Product = () => {
 
     const url = `http://localhost:5000/api/product`;
+
+    const navigate = useNavigate();
 
     const [product, setProduct] = useState({});
 
@@ -21,6 +25,8 @@ export const Product = () => {
         });
 
         const res = await post.json();
+
+        navigate('/products');
     }
 
     const inputHandle = ({ target: { name, value } }) => {
