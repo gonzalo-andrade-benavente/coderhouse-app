@@ -16,6 +16,14 @@ export const ProductApp = () => {
         const res = await get.json();
         setProducts([...res.data]);
     }
+
+    const inputStyle = {
+        margin: '10px' ,
+    };
+
+    const cardStyle = {
+        margin: '10px', 
+    };
     
     useEffect(async () => {
         await getProducts();
@@ -41,16 +49,21 @@ export const ProductApp = () => {
     return(
         <div>
             <Link to="/product">New Product</Link>            
+            
             {
+                products.length === 0 && <h1> Cargando ...</h1>
+            }
+            
+            { 
                 products.map(product => {
                 return (
-                    <div key={product._id} className="card">
+                    <div key={product._id} className="card" style={cardStyle}>
                     <div className="card-body">
                         <h5 className="card-title"> {product.nombre} </h5>
                         <h6 className="card-subtitle mb-2 text-muted"> {product.codigo} </h6>
                         <p className="card-text">{product.descripcion}</p>
                         <a href="#" className="card-link">$ {product.precio} </a>
-                        <input type="button" value="Borrar" onClick={() => deleteProduct(product._id)}/>
+                        <input style={inputStyle} type="button" className="btn btn-outline-danger" value="Borrar" onClick={() => deleteProduct(product._id)}/>
                     </div>
                     </div>
                 );
